@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.RegistrationActivity"/>
-        <activity android:name=".activity.PatientListActivity"
+        <activity android:name=".activity.BaseAuthorizedActivity"
             android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.app.searchable"
@@ -27,8 +27,6 @@
         </activity>
         <activity android:name=".activity.PatientDetailsActivity"/>
         <activity android:name=".activity.CreatePatientActivity"/>
-        <activity android:name=".activity.CalendarActivity"/>
-        <activity android:name=".activity.MessagesActivity"/>
     </application>
 
 </manifest>

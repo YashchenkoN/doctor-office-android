@@ -75,7 +75,7 @@ public class MainActivity extends AbstractAsyncActivity {
 
     private void displayResponse(HttpStatus response) {
         if (response == HttpStatus.OK) {
-            Intent intent = new Intent(MainActivity.this, PatientListActivity.class);
+            Intent intent = new Intent(MainActivity.this, BaseAuthorizedActivity.class);
             startActivity(intent);
             finish();
         } else {
