@@ -47,7 +47,7 @@ public class CalendarFragment extends AsyncFragment implements WeekView.EventCli
         mWeekView.setMonthChangeListener(this);
         mWeekView.setEventLongPressListener(this);
 
-        mWeekView.setNumberOfVisibleDays(0);
+        mWeekView.setNumberOfVisibleDays(1);
 
         return view;
     }
@@ -68,7 +68,7 @@ public class CalendarFragment extends AsyncFragment implements WeekView.EventCli
         event.setColor(getResources().getColor(R.color.colorAccent));
         events.add(event);
 
-        try {
+        /*try {
             EventItem[] eventItems = new FetchEventsTask("02-05-2017").execute().get();
             int i = 0;
             for (EventItem eventItem : eventItems) {
@@ -76,7 +76,7 @@ public class CalendarFragment extends AsyncFragment implements WeekView.EventCli
             }
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
-        }
+        }*/
 
         return events;
     }

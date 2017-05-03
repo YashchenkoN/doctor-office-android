@@ -3,6 +3,8 @@ package ua.kpi.diploma.activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.springframework.http.HttpBasicAuthentication;
@@ -36,7 +38,23 @@ public class PatientDetailsActivity extends AbstractAsyncActivity {
     }
 
     private void displayResponse(PatientItem response) {
-        Toast.makeText(this, "Patient", Toast.LENGTH_LONG).show();
+        TextView name = (TextView) findViewById(R.id.name);
+        name.setText(response.getLastName() + " " + response.getFirstName());
+
+        TextView dateOfBirth = (TextView) findViewById(R.id.date_of_birth);
+        dateOfBirth.setText(response.getDateOfBirth());
+
+        TextView gender = (TextView) findViewById(R.id.gender);
+        gender.setText(response.getGender());
+
+        TextView city = (TextView) findViewById(R.id.city);
+        city.setText(response.getAddress().getCity());
+
+        TextView street = (TextView) findViewById(R.id.street);
+        street.setText(response.getAddress().getStreet());
+
+        TextView series = (TextView) findViewById(R.id.series);
+        series.setText(response.getPassport().getSeries());
     }
 
     private class FetchPatientTask extends AsyncTask<Object, Object, PatientItem> {

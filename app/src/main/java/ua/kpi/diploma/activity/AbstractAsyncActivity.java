@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 
+import ua.kpi.diploma.R;
+
 /**
  * Created by vsind on 30.04.2017.
  */
@@ -21,7 +23,7 @@ public abstract class AbstractAsyncActivity extends AppCompatActivity {
     }
 
     public void showLoadingProgressDialog() {
-        this.showProgressDialog("Loading. Please wait...");
+        this.showProgressDialog(getString(R.string.loading));
     }
 
     public void showProgressDialog(CharSequence message) {

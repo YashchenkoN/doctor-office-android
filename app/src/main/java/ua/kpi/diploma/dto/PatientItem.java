@@ -8,6 +8,9 @@ public class PatientItem {
     private String lastName;
     private String id;
     private String dateOfBirth;
+    private String gender;
+    private AddressItem address;
+    private PassportItem passport;
 
     public String getFirstName() {
         return firstName;
@@ -39,6 +42,30 @@ public class PatientItem {
 
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public AddressItem getAddress() {
+        return address;
+    }
+
+    public void setAddress(AddressItem address) {
+        this.address = address;
+    }
+
+    public PassportItem getPassport() {
+        return passport;
+    }
+
+    public void setPassport(PassportItem passport) {
+        this.passport = passport;
     }
 
     @Override

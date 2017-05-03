@@ -4,9 +4,12 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
 import org.springframework.http.HttpBasicAuthentication;
 import org.springframework.http.HttpEntity;
@@ -30,6 +33,8 @@ import ua.kpi.diploma.dto.PatientItem;
  */
 public class CreatePatientActivity extends AbstractAsyncActivity {
 
+    private static final String[] GENDER = {"Чоловік", "Жінка"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +47,11 @@ public class CreatePatientActivity extends AbstractAsyncActivity {
                 new CreatePatientTask().execute();
             }
         });
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_dropdown_item_1line, GENDER);
+        MaterialBetterSpinner materialDesignSpinner = (MaterialBetterSpinner) findViewById(R.id.gender);
+        materialDesignSpinner.setAdapter(arrayAdapter);
     }
 
     private void displayResponse(HttpStatus response) {

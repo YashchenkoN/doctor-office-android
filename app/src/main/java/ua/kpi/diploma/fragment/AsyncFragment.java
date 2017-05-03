@@ -3,6 +3,8 @@ package ua.kpi.diploma.fragment;
 import android.app.ProgressDialog;
 import android.support.v4.app.Fragment;
 
+import ua.kpi.diploma.R;
+
 /**
  * Created by vsind on 02.05.2017.
  */
@@ -17,7 +19,7 @@ public class AsyncFragment extends Fragment {
     }
 
     public void showLoadingProgressDialog() {
-        this.showProgressDialog("Loading. Please wait...");
+        this.showProgressDialog(getString(R.string.loading));
     }
 
     public void showProgressDialog(CharSequence message) {
