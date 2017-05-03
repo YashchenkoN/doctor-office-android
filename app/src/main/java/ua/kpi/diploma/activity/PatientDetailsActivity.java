@@ -1,7 +1,9 @@
 package ua.kpi.diploma.activity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -20,6 +22,7 @@ import java.util.Collections;
 
 import ua.kpi.diploma.AuthHolder;
 import ua.kpi.diploma.R;
+import ua.kpi.diploma.dto.AddressItem;
 import ua.kpi.diploma.dto.PatientItem;
 
 /**
@@ -32,9 +35,19 @@ public class PatientDetailsActivity extends AbstractAsyncActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.patient_details_activity_layout);
 
-        String patientId = getIntent().getStringExtra("patientId");
+        final String patientId = getIntent().getStringExtra("patientId");
 
         new FetchPatientTask(patientId).execute();
+
+        FloatingActionButton cards = (FloatingActionButton) findViewById(R.id.cards);
+        cards.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PatientDetailsActivity.this, PatientCardListActivity.class);
+                intent.putExtra("patientId", patientId);
+                startActivityForResult(intent, 1);
+            }
+        });
     }
 
     private void displayResponse(PatientItem response) {
@@ -47,14 +60,15 @@ public class PatientDetailsActivity extends AbstractAsyncActivity {
         TextView gender = (TextView) findViewById(R.id.gender);
         gender.setText(response.getGender());
 
-        TextView city = (TextView) findViewById(R.id.city);
-        city.setText(response.getAddress().getCity());
-
-        TextView street = (TextView) findViewById(R.id.street);
-        street.setText(response.getAddress().getStreet());
+        TextView city = (TextView) findViewById(R.id.address);
+        AddressItem address = response.getAddress();
+        city.setText(address.getCity() + ", " + address.getStreet() + ", " + address.getHomeNumber());
 
         TextView series = (TextView) findViewById(R.id.series);
-        series.setText(response.getPassport().getSeries());
+        series.setText(response.getPassport().getSeries() + " " + response.getPassport().getNumber());
+
+        TextView description = (TextView) findViewById(R.id.description);
+        description.setText(response.getPassport().getDate() + ", " + response.getPassport().getWhere());
     }
 
     private class FetchPatientTask extends AsyncTask<Object, Object, PatientItem> {

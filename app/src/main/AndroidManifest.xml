@@ -27,6 +27,9 @@
         </activity>
         <activity android:name=".activity.PatientDetailsActivity"/>
         <activity android:name=".activity.CreatePatientActivity"/>
+        <activity android:name=".activity.CreatePatientCardActivity"/>
+        <activity android:name=".activity.PatientCardListActivity"/>
+        <activity android:name=".activity.PatientCardDetailsActivity"/>
     </application>
 
 </manifest>

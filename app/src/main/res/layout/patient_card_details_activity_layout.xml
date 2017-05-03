@@ -52,7 +52,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
@@ -63,7 +63,7 @@
                 android:textSize="32sp"/>
 
             <TextView
-                android:id="@+id/date_of_birth"
+                android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -72,7 +72,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
             <TextView
-                android:id="@+id/gender"
+                android:id="@+id/workplace"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -86,11 +86,11 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/address"
+                android:text="@string/complaint"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
             <TextView
-                android:id="@+id/address"
+                android:id="@+id/complaint"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -104,26 +104,54 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/passport"
+                android:text="@string/diagnosis"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
             <TextView
-                android:id="@+id/series"
+                android:id="@+id/diagnosis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:fontFamily="sans-serif-light"
-                android:lineSpacingMultiplier="0.8"
+                android:lineSpacingMultiplier="1.2"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
             <TextView
-                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/related_diseases"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <TextView
+                android:id="@+id/related_diseases"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:fontFamily="sans-serif-light"
-                android:lineSpacingMultiplier="0.8"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
+                android:lineSpacingMultiplier="1.2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/visual_inspection"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <TextView
+                android:id="@+id/visual_inspection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:fontFamily="sans-serif-light"
+                android:lineSpacingMultiplier="1.2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
@@ -140,18 +168,5 @@
         app:layout_anchorGravity="bottom|right|end"
         app:pressedTranslationZ="12dp"
         app:rippleColor="@android:color/white"/>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/cards"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:src="@drawable/cards"
-        app:elevation="6dp"
-        app:layout_anchor="@+id/scrolling_container"
-        app:pressedTranslationZ="12dp"
-        app:rippleColor="@android:color/white"
-        app:layout_anchorGravity="top|right"
-        android:layout_gravity="center_vertical|left" />
 
 </android.support.design.widget.CoordinatorLayout>

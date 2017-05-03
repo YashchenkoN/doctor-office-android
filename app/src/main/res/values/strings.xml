@@ -23,6 +23,12 @@
     <string name="nav_home">Пацієнти</string>
     <string name="nav_messages">Повідомлення</string>
     <string name="nav_calendar">Календар</string>
-    <string name="address">Address</string>
+    <string name="address">Адреса</string>
     <string name="passport">Паспорт</string>
+    <string name="details">Деталі</string>
+    <string name="complaint">Жалоба</string>
+    <string name="diagnosis">Діагноз</string>
+    <string name="related_diseases">Супроводжуючі захворювання</string>
+    <string name="visual_inspection">Зовнішній огляд</string>
+    <string name="workplace">Робоче місце</string>
 </resources>
