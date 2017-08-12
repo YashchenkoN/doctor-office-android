@@ -3,8 +3,17 @@ package ua.kpi.diploma.dto;
 /**
  * @author Mykola Yashchenko
  */
+public class DialogItem {
+    private String id;
 
-public class CurrentUser {
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     private String name;
 
     public String getName() {

@@ -1,13 +1,12 @@
 package ua.kpi.diploma.activity;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 
 import ua.kpi.diploma.R;
 
 /**
- * Created by vsind on 30.04.2017.
+ * @author Mykola Yashchenko
  */
 public abstract class AbstractAsyncActivity extends AppCompatActivity {
 

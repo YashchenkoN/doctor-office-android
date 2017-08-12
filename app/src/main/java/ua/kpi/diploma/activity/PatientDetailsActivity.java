@@ -1,6 +1,7 @@
 package ua.kpi.diploma.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -23,10 +24,11 @@ import java.util.Collections;
 import ua.kpi.diploma.AuthHolder;
 import ua.kpi.diploma.R;
 import ua.kpi.diploma.dto.AddressItem;
+import ua.kpi.diploma.dto.PassportItem;
 import ua.kpi.diploma.dto.PatientItem;
 
 /**
- * Created by vsind on 30.04.2017.
+ * @author Mykola Yashchenko
  */
 public class PatientDetailsActivity extends AbstractAsyncActivity {
 
@@ -34,6 +36,9 @@ public class PatientDetailsActivity extends AbstractAsyncActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.patient_details_activity_layout);
+
+        findViewById(R.id.main_content).setBackground(getApplicationContext().getDrawable(R.drawable.pic_2));
+        findViewById(R.id.main_content).getBackground().setAlpha(40);
 
         final String patientId = getIntent().getStringExtra("patientId");
 
@@ -48,6 +53,15 @@ public class PatientDetailsActivity extends AbstractAsyncActivity {
                 startActivityForResult(intent, 1);
             }
         });
+
+        /*FloatingActionButton message = (FloatingActionButton) findViewById(R.id.message);
+        cards.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent(Intent.ACTION_VIEW);
+                sendIntent.setData(Uri.parse("sms:" + phoneNumber));
+            }
+        });*/
     }
 
     private void displayResponse(PatientItem response) {

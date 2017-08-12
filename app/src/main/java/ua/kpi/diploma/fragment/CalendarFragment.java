@@ -22,9 +22,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -33,10 +36,12 @@ import ua.kpi.diploma.R;
 import ua.kpi.diploma.dto.EventItem;
 
 /**
- * Created by vsind on 01.05.2017.
+ * @author Mykola Yashchenko
  */
 public class CalendarFragment extends AsyncFragment implements WeekView.EventClickListener,
         MonthLoader.MonthChangeListener, WeekView.EventLongPressListener, WeekView.EmptyViewLongPressListener {
+
+    private DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -56,27 +61,14 @@ public class CalendarFragment extends AsyncFragment implements WeekView.EventCli
     public List<? extends WeekViewEvent> onMonthChange(int newYear, int newMonth) {
         List<WeekViewEvent> events = new ArrayList<>();
 
-        Calendar startTime = Calendar.getInstance();
-        startTime.set(Calendar.HOUR_OF_DAY, 3);
-        startTime.set(Calendar.MINUTE, 0);
-        startTime.set(Calendar.MONTH, newMonth - 1);
-        startTime.set(Calendar.YEAR, newYear);
-        Calendar endTime = (Calendar) startTime.clone();
-        endTime.add(Calendar.HOUR, 1);
-        endTime.set(Calendar.MONTH, newMonth - 1);
-        WeekViewEvent event = new WeekViewEvent(1, "Title", startTime, endTime);
-        event.setColor(getResources().getColor(R.color.colorAccent));
-        events.add(event);
-
-        /*try {
-            EventItem[] eventItems = new FetchEventsTask("02-05-2017").execute().get();
-            int i = 0;
+        try {
+            EventItem[] eventItems = new FetchEventsTask(dateFormat.format(new Date())).execute().get();
             for (EventItem eventItem : eventItems) {
-                // todo
+//                 todo
             }
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
-        }*/
+        }
 
         return events;
     }

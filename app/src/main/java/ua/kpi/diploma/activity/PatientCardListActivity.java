@@ -30,7 +30,7 @@ import ua.kpi.diploma.dto.PatientCardItem;
 import ua.kpi.diploma.dto.PatientItem;
 
 /**
- * Created by vsind on 30.04.2017.
+ * @author Mykola Yashchenko
  */
 public class PatientCardListActivity extends AbstractAsyncActivity {
 
@@ -38,6 +38,9 @@ public class PatientCardListActivity extends AbstractAsyncActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.patient_card_list_activity_layout);
+
+        findViewById(R.id.drawer_layout).setBackground(getApplicationContext().getDrawable(R.drawable.pic_2));
+        findViewById(R.id.drawer_layout).getBackground().setAlpha(40);
 
         String patientCardId = getIntent().getStringExtra("patientId");
 

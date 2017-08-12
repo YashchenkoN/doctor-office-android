@@ -29,7 +29,7 @@ import ua.kpi.diploma.dto.CreatePatientRequest;
 import ua.kpi.diploma.dto.PatientItem;
 
 /**
- * Created by vsind on 30.04.2017.
+ * @author Mykola Yashchenko
  */
 public class CreatePatientActivity extends AbstractAsyncActivity {
 

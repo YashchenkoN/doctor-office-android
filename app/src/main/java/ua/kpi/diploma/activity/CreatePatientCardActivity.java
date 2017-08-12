@@ -26,7 +26,7 @@ import ua.kpi.diploma.dto.CreatePatientRequest;
 import ua.kpi.diploma.dto.PatientItem;
 
 /**
- * Created by vsind on 30.04.2017.
+ * @author Mykola Yashchenko
  */
 public class CreatePatientCardActivity extends AbstractAsyncActivity {
 
@@ -39,7 +39,7 @@ public class CreatePatientCardActivity extends AbstractAsyncActivity {
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                new CreatePatientTask().execute();
             }
         });
     }

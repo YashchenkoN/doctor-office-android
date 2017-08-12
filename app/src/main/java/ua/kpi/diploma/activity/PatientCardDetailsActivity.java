@@ -21,7 +21,7 @@ import ua.kpi.diploma.R;
 import ua.kpi.diploma.dto.PatientCardItem;
 
 /**
- * Created by vsind on 30.04.2017.
+ * @author Mykola Yashchenko on 30.04.2017.
  */
 public class PatientCardDetailsActivity extends AbstractAsyncActivity {
 
@@ -29,6 +29,9 @@ public class PatientCardDetailsActivity extends AbstractAsyncActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.patient_card_details_activity_layout);
+
+        findViewById(R.id.main_content).setBackground(getApplicationContext().getDrawable(R.drawable.pic_2));
+        findViewById(R.id.main_content).getBackground().setAlpha(40);
 
         String patientCardId = getIntent().getStringExtra("patientCardId");
 
@@ -55,7 +58,7 @@ public class PatientCardDetailsActivity extends AbstractAsyncActivity {
         description.setText(response.getRelatedDiseases());
 
         TextView visualInspection = (TextView) findViewById(R.id.visual_inspection);
-        visualInspection.setText(response.getRelatedDiseases());
+        visualInspection.setText(response.getVisualInspection());
     }
 
     private class FetchPatientCardTask extends AsyncTask<Object, Object, PatientCardItem> {

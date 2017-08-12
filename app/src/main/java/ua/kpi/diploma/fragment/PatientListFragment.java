@@ -32,7 +32,7 @@ import ua.kpi.diploma.adapter.PatientListAdapter;
 import ua.kpi.diploma.dto.PatientItem;
 
 /**
- * Created by vsind on 01.05.2017.
+ * @author Mykola Yashchenko
  */
 public class PatientListFragment extends AsyncFragment {
 
@@ -45,6 +45,8 @@ public class PatientListFragment extends AsyncFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.patient_list_content, container, false);
+        view.setBackground(getContext().getDrawable(R.drawable.pic_3));
+        view.getBackground().setAlpha(40);
 
         loadPatients();
 

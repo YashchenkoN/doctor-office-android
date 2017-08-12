@@ -30,6 +30,7 @@
         <activity android:name=".activity.CreatePatientCardActivity"/>
         <activity android:name=".activity.PatientCardListActivity"/>
         <activity android:name=".activity.PatientCardDetailsActivity"/>
+        <activity android:name=".activity.DialogActivity"/>
     </application>
 
 </manifest>

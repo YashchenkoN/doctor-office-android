@@ -1,7 +1,7 @@
 package ua.kpi.diploma.dto;
 
 /**
- * Created by vsind on 03.05.2017.
+ * @author Mykola Yashchenko
  */
 public class PatientCardItem {
     private String id;

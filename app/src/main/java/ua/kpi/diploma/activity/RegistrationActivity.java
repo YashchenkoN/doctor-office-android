@@ -24,7 +24,7 @@ import ua.kpi.diploma.dto.CreateUserRequest;
 import ua.kpi.diploma.dto.CurrentUser;
 
 /**
- * Created by vsind on 30.04.2017.
+ * @author Mykola Yashchenko
  */
 public class RegistrationActivity extends AbstractAsyncActivity {
     protected static final String TAG = RegistrationActivity.class.getSimpleName();
@@ -33,6 +33,9 @@ public class RegistrationActivity extends AbstractAsyncActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registration_activity_layout);
+
+        findViewById(R.id.main_content).setBackground(getApplicationContext().getDrawable(R.drawable.pic_1));
+        findViewById(R.id.main_content).getBackground().setAlpha(40);
 
         final Button registrationButton = (Button) findViewById(R.id.register);
         registrationButton.setOnClickListener(new View.OnClickListener() {

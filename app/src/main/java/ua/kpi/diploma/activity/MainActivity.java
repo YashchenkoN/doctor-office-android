@@ -28,6 +28,9 @@ import ua.kpi.diploma.AuthHolder;
 import ua.kpi.diploma.R;
 import ua.kpi.diploma.dto.CurrentUser;
 
+/**
+ * @author Mykola Yashchenko
+ */
 public class MainActivity extends AbstractAsyncActivity {
 
     protected static final String TAG = MainActivity.class.getSimpleName();
@@ -37,6 +40,8 @@ public class MainActivity extends AbstractAsyncActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity_layout);
+        findViewById(R.id.main_content).setBackground(getApplicationContext().getDrawable(R.drawable.pic_1));
+        findViewById(R.id.main_content).getBackground().setAlpha(40);
 
         final Button submitButton = (Button) findViewById(R.id.submit);
         submitButton.setOnClickListener(new View.OnClickListener() {

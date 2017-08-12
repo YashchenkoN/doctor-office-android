@@ -13,7 +13,7 @@ import ua.kpi.diploma.R;
 import ua.kpi.diploma.dto.PatientItem;
 
 /**
- * Created by vsind on 01.05.2017.
+ * @author Mykola Yashchenko
  */
 public class PatientListAdapter extends ArrayAdapter<PatientItem> {
 

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Особистий кабінет лікаря</string>
-    <string name="username">Ім\'я користувача:</string>
-    <string name="password">Пароль:</string>
+    <string name="username">Логін</string>
+    <string name="password">Пароль</string>
     <string name="submit">Увійти</string>
     <string name="register">Зареєструвати</string>
     <string name="first_name">Ім\'я</string>
@@ -21,7 +21,7 @@
     <string name="register_link_text">Нема аккаунту? Створити</string>
     <string name="loading">Завантаження</string>
     <string name="nav_home">Пацієнти</string>
-    <string name="nav_messages">Повідомлення</string>
+    <string name="nav_messages">Діалоги</string>
     <string name="nav_calendar">Календар</string>
     <string name="address">Адреса</string>
     <string name="passport">Паспорт</string>
@@ -31,4 +31,17 @@
     <string name="related_diseases">Супроводжуючі захворювання</string>
     <string name="visual_inspection">Зовнішній огляд</string>
     <string name="workplace">Робоче місце</string>
+    <string name="specialization">Спеціалізація</string>
+    <string name="category">Категорія</string>
+    <string name="date_of_creation">Дата заповнення картки</string>
+    <string name="disp_group">Диспансер група</string>
+    <string name="date_start">Взятий на облік</string>
+    <string name="date_end">Взятий з обліку</string>
+    <string name="nav_setting">Налаштування</string>
+    <string name="language">Мова</string>
+    <string name="save">Зберегти</string>
+
+    <string-array name="settings_items">
+        <item>Мова</item>
+    </string-array>
 </resources>

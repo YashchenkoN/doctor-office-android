@@ -9,16 +9,17 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import ua.kpi.diploma.R;
-import ua.kpi.diploma.dto.PatientCardItem;
+import ua.kpi.diploma.dto.DialogItem;
+import ua.kpi.diploma.dto.PatientItem;
 
 /**
  * @author Mykola Yashchenko
  */
-public class PatientCardListAdapter extends ArrayAdapter<PatientCardItem> {
+public class DialogListAdapter extends ArrayAdapter<DialogItem> {
 
     private Activity context;
 
-    public PatientCardListAdapter(Activity context, int resource, PatientCardItem[] objects) {
+    public DialogListAdapter(Activity context, int resource, DialogItem[] objects) {
         super(context, resource, objects);
         this.context = context;
     }
@@ -28,14 +29,14 @@ public class PatientCardListAdapter extends ArrayAdapter<PatientCardItem> {
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             LayoutInflater inflater = context.getLayoutInflater();
-            convertView = inflater.inflate(R.layout.patient_list_row, parent, false);
+            convertView = inflater.inflate(R.layout.dialog_list_row, parent, false);
         }
 
-        PatientCardItem item = getItem(position);
-        TextView cardName = (TextView) convertView.findViewById(R.id.lists_text_style);
+        DialogItem item = getItem(position);
+        TextView patientName = (TextView) convertView.findViewById(R.id.lists_text_style);
 
-        if (cardName != null) {
-            cardName.setText(item.getDate());
+        if (patientName != null) {
+            patientName.setText(item.getName());
         }
 
         return convertView;

@@ -1,7 +1,7 @@
 package ua.kpi.diploma.dto;
 
 /**
- * Created by vsind on 30.04.2017.
+ * @author Mykola Yashchenko
  */
 public class PatientItem {
     private String firstName;

@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import ua.kpi.diploma.R;
 
 /**
- * Created by vsind on 02.05.2017.
+ * @author Mykola Yashchenko
  */
 public class AsyncFragment extends Fragment {
     private ProgressDialog progressDialog;

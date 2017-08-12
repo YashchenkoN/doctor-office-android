@@ -20,11 +20,13 @@ import android.widget.Toast;
 
 import ua.kpi.diploma.R;
 import ua.kpi.diploma.fragment.CalendarFragment;
+import ua.kpi.diploma.fragment.DialogListFragment;
 import ua.kpi.diploma.fragment.MessagesFragment;
 import ua.kpi.diploma.fragment.PatientListFragment;
+import ua.kpi.diploma.fragment.SettingsFragment;
 
 /**
- * Created by vsind on 01.05.2017.
+ * @author Mykola Yashchenko
  */
 public class BaseAuthorizedActivity extends AbstractAsyncActivity {
 
@@ -63,7 +65,11 @@ public class BaseAuthorizedActivity extends AbstractAsyncActivity {
                         break;
                     case R.id.nav_messages:
                         fragmentManager.beginTransaction()
-                                .replace(R.id.content, new MessagesFragment()).commit();
+                                .replace(R.id.content, new DialogListFragment()).commit();
+                        break;
+                    case R.id.nav_setting:
+                        fragmentManager.beginTransaction()
+                                .replace(R.id.content, new SettingsFragment()).commit();
                         break;
                 }
                 return true;
